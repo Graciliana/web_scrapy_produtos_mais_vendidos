@@ -81,6 +81,8 @@ df["ranking_number"] = df["ranking_number"].astype(int)
 # Verificar o DataFrame final
 #print(df.dtypes)
 print(df["ranking_number"].unique())
+# salvar o dataframe em uma arquivo csv
+df.to_csv('../datasets/df_produtosmaisvendidos.csv', index=False, encoding="utf-8")
 
 # Conectar ao banco de dados SQLite
 conn = sqlite3.connect("../datasets/mlprodutosmaisvendidos.db")
